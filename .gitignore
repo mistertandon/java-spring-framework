@@ -1,8 +1,10 @@
-/.metadata/
-/.recommenders/
-/.metadata/
-/.recommenders/
-/RemoteSystemsTempFiles/
-/Servers/
+/.metadata/*
+/.recommenders/*
+/.metadata/*
+/.recommenders/*
+/RemoteSystemsTempFiles/*
+/Servers/*
 /SpringBeanContext/.settings/*
 /SpringBeanContext/bin/*
+/SpringApplicationContextDemo/.settings/*
+/SpringApplicationContextDemo/bin/*

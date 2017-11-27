@@ -7,7 +7,7 @@ import org.springframework.core.io.Resource;
 
 import com.mistertandon.model.Message;
 
-public class ClienTest {
+public class ClientTest {
 
 	public static void main(String[] args) {
 
