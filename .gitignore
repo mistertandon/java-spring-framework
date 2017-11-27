@@ -12,3 +12,5 @@
 /.recommenders/
 /ApplicationContextFilePath/.settings/*
 /ApplicationContextFilePath/bin/*
+/SpringBeansScopesDemo/.settings/*
+/SpringBeansScopesDemo/bin/*
