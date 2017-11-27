@@ -8,3 +8,7 @@
 /SpringBeanContext/bin/*
 /SpringApplicationContextDemo/.settings/*
 /SpringApplicationContextDemo/bin/*
+/.metadata/
+/.recommenders/
+/ApplicationContextFilePath/.settings/*
+/ApplicationContextFilePath/bin/*
