@@ -16,3 +16,5 @@
 /SpringBeansScopesDemo/bin/*
 /SpringBeansScopeUsingAnnotation/.settings/*
 /SpringBeansScopeUsingAnnotation/bin/*
+/DependencyInjectionUsingConstructor/.settings/*
+/DependencyInjectionUsingConstructor/bin/*
