@@ -14,8 +14,8 @@
 /Spring03ApplicationContextFilePath/bin/*
 /Spring04BeansScopes/.settings/*
 /Spring04BeansScopes/bin/*
-/SpringBeansScopeUsingAnnotation/.settings/*
-/SpringBeansScopeUsingAnnotation/bin/*
+/Spring05BeansScopeUsingAnnotation/.settings/*
+/Spring05BeansScopeUsingAnnotation/bin/*
 /DependencyInjectionUsingConstructor/.settings/*
 /DependencyInjectionUsingConstructor/bin/*
 /Spring08BeanInheritence/.settings/*
