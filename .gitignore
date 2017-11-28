@@ -4,8 +4,8 @@
 /.recommenders/*
 /RemoteSystemsTempFiles/*
 /Servers/*
-/SpringBeanContext/.settings/*
-/SpringBeanContext/bin/*
+/Spring01BeanContext/.settings/*
+/Spring01BeanContext/bin/*
 /SpringApplicationContextDemo/.settings/*
 /SpringApplicationContextDemo/bin/*
 /.metadata/
