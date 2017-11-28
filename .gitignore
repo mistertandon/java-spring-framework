@@ -12,8 +12,8 @@
 /.recommenders/
 /Spring03ApplicationContextFilePath/.settings/*
 /Spring03ApplicationContextFilePath/bin/*
-/SpringBeansScopesDemo/.settings/*
-/SpringBeansScopesDemo/bin/*
+/Spring04BeansScopes/.settings/*
+/Spring04BeansScopes/bin/*
 /SpringBeansScopeUsingAnnotation/.settings/*
 /SpringBeansScopeUsingAnnotation/bin/*
 /DependencyInjectionUsingConstructor/.settings/*
