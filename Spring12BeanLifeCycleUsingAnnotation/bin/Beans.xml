@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+	xmlns:context="http://www.springframework.org/schema/context">
+
+	<bean id="MessageBC" class="com.mistertandon.model.Message">
+		<property name="messageId" value="104981"></property>
+		<property name="message" value="Sending secret message..."></property>
+	</bean>
+	<!-- Either way we may enable post initialization and pre destroy beans 
+		function -->
+	<!-- <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"></bean> -->
+	<context:annotation-config />
+</beans>
