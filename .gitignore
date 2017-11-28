@@ -6,8 +6,8 @@
 /Servers/*
 /Spring01BeanContext/.settings/*
 /Spring01BeanContext/bin/*
-/SpringApplicationContextDemo/.settings/*
-/SpringApplicationContextDemo/bin/*
+/Spring02ApplicationContext/.settings/*
+/Spring02ApplicationContext/bin/*
 /.metadata/
 /.recommenders/
 /ApplicationContextFilePath/.settings/*
