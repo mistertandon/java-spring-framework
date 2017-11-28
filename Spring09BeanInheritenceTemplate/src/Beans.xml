@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+	xmlns:context="http://www.springframework.org/schema/context">
+
+	<bean id="PersonTB" abstract="true">
+		<property name="id" value="104981"></property>
+		<property name="name" value="Parvesh Tandon"></property>
+		<property name="gender" value="Male"></property>
+	</bean>
+
+	<bean id="EmployeeId" class="com.mistertandon.model.Employee"
+		parent="PersonTB">
+		<!-- As we know 'Employee' class have 4 properties id, name, gender, panNo. 
+			By defining current bean configuration "id, gender" properties will get inherited 
+			from Person class and 'name' will be overwrite in Employee Bean -->
+		<property name="name" value="Mister Tandon"></property>
+		<property name="panNo" value="ARPST4803A"></property>
+
+	</bean>
+</beans>
