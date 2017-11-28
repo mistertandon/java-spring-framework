@@ -10,8 +10,8 @@
 /Spring02ApplicationContext/bin/*
 /.metadata/
 /.recommenders/
-/ApplicationContextFilePath/.settings/*
-/ApplicationContextFilePath/bin/*
+/Spring03ApplicationContextFilePath/.settings/*
+/Spring03ApplicationContextFilePath/bin/*
 /SpringBeansScopesDemo/.settings/*
 /SpringBeansScopesDemo/bin/*
 /SpringBeansScopeUsingAnnotation/.settings/*
