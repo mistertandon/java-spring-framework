@@ -26,3 +26,5 @@
 /Spring09BeanInheritenceTemplate/bin/*
 /Spring10BeanLifeCycleUsingCallBackInterface/.settings/*
 /Spring10BeanLifeCycleUsingCallBackInterface/bin/*
+/Spring11BeanLifeCycleUsingXmlConfiguration/.settings/*
+/Spring11BeanLifeCycleUsingXmlConfiguration/bin/*
