@@ -1,12 +1,12 @@
 package com.mistertandon.communication;
 
-import com.mistertandon.message.ActiveMessage;
+import com.mistertandon.message.Messaging;
 
 public class Communication {
 
-	ActiveMessage activeMessageObj;
+	Messaging activeMessageObj;
 
-	public Communication(ActiveMessage activeMessageObj) {
+	public Communication(Messaging activeMessageObj) {
 
 		super();
 		this.activeMessageObj = activeMessageObj;
