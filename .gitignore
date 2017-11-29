@@ -34,5 +34,5 @@
 /Spring13InjectingCollectionWithArrayListAndSet/bin/*
 /Spring14InjectingCustomCollectionWithArrayListAndSet/.settings/*
 /Spring14InjectingCustomCollectionWithArrayListAndSet/bin/*
-
-
+/Spring15InjectingCollectionWithMap/.settings/*
+/Spring15InjectingCollectionWithMap/bin/*
