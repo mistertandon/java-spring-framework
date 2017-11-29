@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+	xmlns:context="http://www.springframework.org/schema/context">
+	<!-- private Student studentArr[] -->
+
+	<!-- private List<Student> studentList; -->
+
+	<!-- private Set<Student> studentSet; -->
+	<bean id="OrgInfoBC" class="com.mistertandon.info.OrgInfo">
+		<property name="studentArr">
+			<array>
+				<ref bean="StudentBC_A" />
+				<ref bean="StudentBC_B" />
+				<ref bean="StudentBC_C" />
+				<ref bean="StudentBC_A" />
+			</array>
+		</property>
+		<property name="studentList">
+			<list>
+				<ref bean="StudentBC_A" />
+				<ref bean="StudentBC_B" />
+				<ref bean="StudentBC_C" />
+				<ref bean="StudentBC_A" />
+			</list>
+
+		</property>
+		<property name="studentSet">
+			<set>
+				<ref bean="StudentBC_A" />
+				<ref bean="StudentBC_B" />
+				<ref bean="StudentBC_C" />
+				<ref bean="StudentBC_A" />
+			</set>
+
+		</property>
+	</bean>
+	<bean id="StudentBC_A" class="com.mistertandon.model.Student">
+		<property name="studentId" value="104981"></property>
+		<property name="studentName" value="Parvesh Tandon"></property>
+		<property name="gender" value="male"></property>
+		<property name="emailId" value="enggparveshtandon@gmail.com"></property>
+	</bean>
+	<bean id="StudentBC_B" class="com.mistertandon.model.Student">
+		<property name="studentId" value="104982"></property>
+		<property name="studentName" value="Praveen Tandon"></property>
+		<property name="gender" value="male"></property>
+		<property name="emailId" value="enggpraveentandon@gmail.com"></property>
+	</bean>
+	<bean id="StudentBC_C" class="com.mistertandon.model.Student">
+		<property name="studentId" value="104983"></property>
+		<property name="studentName" value="Prabhash Tandon"></property>
+		<property name="gender" value="male"></property>
+		<property name="emailId" value="enggprabhashtandon@gmail.com"></property>
+	</bean>
+</beans>

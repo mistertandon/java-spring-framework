@@ -32,5 +32,7 @@
 /Spring12BeanLifeCycleUsingAnnotation/bin/*
 /Spring13InjectingCollectionWithArrayListAndSet/.settings/*
 /Spring13InjectingCollectionWithArrayListAndSet/bin/*
+/Spring14InjectingCustomCollectionWithArrayListAndSet/.settings/*
+/Spring14InjectingCustomCollectionWithArrayListAndSet/bin/*
 
 
