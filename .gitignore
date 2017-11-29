@@ -30,4 +30,7 @@
 /Spring11BeanLifeCycleUsingXmlConfiguration/bin/*
 /Spring12BeanLifeCycleUsingAnnotation/.settings/*
 /Spring12BeanLifeCycleUsingAnnotation/bin/*
+/Spring13InjectingCollectionWithArrayListAndSet/.settings/*
+/Spring13InjectingCollectionWithArrayListAndSet/bin/*
+
 

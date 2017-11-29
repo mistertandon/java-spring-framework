@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+	xmlns:context="http://www.springframework.org/schema/context">
+
+	<bean id="OrgInfoBC" class="com.mistertandon.info.OrgInfo">
+		<property name="nameArr">
+			<array>
+				<value>Parvesh</value>
+				<value>Prabhash</value>
+				<value>Praveen</value>
+				<value>Parvesh</value>
+			</array>
+		</property>
+		<property name="empNameList">
+			<list>
+				<value>Gaurav</value>
+				<value>Sandeep</value>
+				<value>Gaurav</value>
+				<value>Sandeep</value>
+			</list>
+		</property>
+		<property name="empIdSet">
+			<set>
+				<value>104981</value>
+				<value>104982</value>
+				<value>104983</value>
+				<value>104981</value>
+			</set>
+		</property>
+	</bean>
+
+</beans>
