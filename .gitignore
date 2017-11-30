@@ -38,3 +38,5 @@
 /Spring15InjectingCollectionWithMap/bin/*
 /Spring16InjectingCollectionUsingProp/.settings/*
 /Spring16InjectingCollectionUsingProp/bin/*
+/Spring17BeansPostProcessor/.settings/*
+/Spring17BeansPostProcessor/bin/*
