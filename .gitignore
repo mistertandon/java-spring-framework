@@ -44,3 +44,6 @@
 /Spring18AutowiringByName/bin/*
 /Spring19AutowiringByType/.settings/*
 /Spring19AutowiringByType/bin/*
+/Spring20AutowiringByConstructor/.settings/*
+/Spring20AutowiringByConstructor/bin/*
+
