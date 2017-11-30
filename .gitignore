@@ -40,3 +40,7 @@
 /Spring16InjectingCollectionUsingProp/bin/*
 /Spring17BeansPostProcessor/.settings/*
 /Spring17BeansPostProcessor/bin/*
+/Spring18AutowiringByName/.settings/*
+/Spring18AutowiringByName/bin/*
+/Spring19AutowiringByType/.settings/*
+/Spring19AutowiringByType/bin/*
