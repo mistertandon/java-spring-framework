@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="MessageBC" class="com.mistertandon.model.Message">
+		<property name="id" value="104981"></property>
+		<property name="content" value="Message on high priority..."></property>
+	</bean>
+	<bean class="com.mistertandon.event.handler.ContextStartedEventHandler"></bean>
+	<bean class="com.mistertandon.event.handler.ContextStoppedEventHandler"></bean>
+</beans>
