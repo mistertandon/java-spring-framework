@@ -50,4 +50,5 @@
 /Spring21EventHandling/bin/*
 /Spring22CustomEvent/.settings/*
 /Spring22CustomEvent/bin/*
-
+/Spring23MethodInjection/.settings/*
+/Spring23MethodInjection/bin/*
