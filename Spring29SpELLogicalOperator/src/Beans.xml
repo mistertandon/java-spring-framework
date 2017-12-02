@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="MarksheetBC" class="com.mistertandon.model.Marksheet">
+		<property name="studentName" value="Mister Tandon"></property>
+		<property name="marksInMath" value="24"></property>
+		<property name="marksInPhysics" value="69"></property>
+		<property name="marksInChemistry" value="70"></property>
+	</bean>
+	<bean id="ResultBC" class="com.mistertandon.model.Result">
+		<property name="hasPassed"
+			value="#{(MarksheetBC.marksInMath>24 and MarksheetBC.marksInChemistry>24 and MarksheetBC.marksInChemistry>24)}"></property>
+		<property name="resultMessage"
+			value="#{(MarksheetBC.marksInMath>24 and MarksheetBC.marksInChemistry>24 and MarksheetBC.marksInChemistry>24)?passedMessage:failedMessage}"></property>
+	</bean>
+	<bean id="passedMessage" class="java.lang.String">
+		<constructor-arg>
+			<value>
+				Congratulation: You have passed examination.
+			</value>
+		</constructor-arg>
+	</bean>
+	<bean id="failedMessage" class="java.lang.String">
+		<constructor-arg>
+			<value>
+				Sorry: You have failed examination.
+			</value>
+		</constructor-arg>
+	</bean>
+
+</beans>
