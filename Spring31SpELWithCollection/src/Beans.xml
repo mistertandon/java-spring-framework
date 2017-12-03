@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="StudentBC_A" class="com.mistertandon.model.Student">
+		<property name="name" value="Mister Tandon"></property>
+		<property name="marks" value="30"></property>
+	</bean>
+	<bean id="StudentBC_B" class="com.mistertandon.model.Student">
+		<property name="name" value="Parvesh Tandon"></property>
+		<property name="marks" value="40"></property>
+	</bean>
+	<bean id="StudentBC_C" class="com.mistertandon.model.Student">
+		<property name="name" value="Praveen Tandon"></property>
+		<property name="marks" value="50"></property>
+	</bean>
+	<bean id="StudentBC_D" class="com.mistertandon.model.Student">
+		<property name="name" value="Prabhash Tandon"></property>
+		<property name="marks" value="60"></property>
+	</bean>
+	<bean id="StudentListBC" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<ref bean="StudentBC_A" />
+				<ref bean="StudentBC_B" />
+				<ref bean="StudentBC_C" />
+				<ref bean="StudentBC_D" />
+			</list>
+		</constructor-arg>
+	</bean>
+	<bean id="StudentListAccessorBC" class="com.mistertandon.model.StudentListAccessor">
+		<property name="thirdStudentInList" value="#{StudentListBC[2]}"></property>
+		<property name="failedStudent" value="#{StudentListBC.?[marks lt 40]}"></property>
+		<property name="studentNames" value="#{StudentListBC.![name]}"></property>
+	</bean>
+</beans>
