@@ -8,7 +8,7 @@ public class Employee {
 
 	private String name;
 	
-	@Autowired
+	@Autowired(required=false)
 	private PanCard panCardObj;
 
 	public Integer getId() {

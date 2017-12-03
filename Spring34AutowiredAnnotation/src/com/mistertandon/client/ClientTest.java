@@ -23,12 +23,18 @@ public class ClientTest {
 			System.out.println("Employee Id: " + employeeObj.getId());
 			System.out.println("Employee Name: " + employeeObj.getName());
 
-			System.out.println("\nPan Card Information :\n");
-
 			PanCard panCardObj = employeeObj.getPanCardObj();
 
-			System.out.println("Pan Card holder name: " + panCardObj.getPanHolderNumber());
-			System.out.println("Pan Card Number: " + panCardObj.getPanNumber());
+			if (panCardObj != null) {
+
+				System.out.println("\nPan Card Information :\n");
+
+				System.out.println("Pan Card holder name: " + panCardObj.getPanHolderNumber());
+				System.out.println("Pan Card Number: " + panCardObj.getPanNumber());
+			} else {
+				System.out.println("Employee Pan Card information is not available.");
+			}
+
 		} catch (BeansException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
