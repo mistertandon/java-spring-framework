@@ -6,13 +6,13 @@ import org.springframework.stereotype.Component;
 
 @Component("employeeObj")
 public class Employee {
-	
-	@Value("104981")
+
+	@Value("${Employee.id}")
 	private int id;
-	
-	@Value("Mister Tandon")
+
+	@Value("${Employe.name}")
 	private String name;
-	
+
 	@Autowired
 	private PanCard panCardObj;
 
