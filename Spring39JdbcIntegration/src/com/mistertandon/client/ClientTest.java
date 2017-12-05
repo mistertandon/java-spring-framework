@@ -2,6 +2,7 @@ package com.mistertandon.client;
 
 import java.util.List;
 
+import org.springframework.beans.BeansException;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -14,19 +15,24 @@ public class ClientTest {
 
 		AbstractApplicationContext abstractApplicationContextObj = null;
 
-		abstractApplicationContextObj = new ClassPathXmlApplicationContext("Beans.xml");
+		try {
 
-		EmployeeService employeeServiceObj = abstractApplicationContextObj.getBean("EmployeeServiceBC",
-				EmployeeService.class);
+			abstractApplicationContextObj = new ClassPathXmlApplicationContext("Beans.xml");
+			EmployeeService employeeServiceObj = abstractApplicationContextObj.getBean("EmployeeServiceBC",
+					EmployeeService.class);
 
-		// addEmployeeDetail(employeeServiceObj);
-		// getEmployeeDetailById(employeeServiceObj, 1);
-		// getAllEmployeeDetails(employeeServiceObj);
-		// updateEmployeeEmailById(employeeServiceObj, "prabhash@gmail.com", 3);
+			// addEmployeeDetail(employeeServiceObj);
+			getEmployeeDetailById(employeeServiceObj, 1);
+			// getAllEmployeeDetails(employeeServiceObj);
+			// updateEmployeeEmailById(employeeServiceObj, "prabhash@gmail.com", 3);
+			// deleteEmployeeById(employeeServiceObj, 6);
 
-		deleteEmployeeById(employeeServiceObj, 6);
+		} catch (BeansException e) {
 
-		abstractApplicationContextObj.close();
+			e.printStackTrace();
+		} finally {
+			abstractApplicationContextObj.close();
+		}
 	}
 
 	private static void deleteEmployeeById(EmployeeService employeeServiceObj, int id) {

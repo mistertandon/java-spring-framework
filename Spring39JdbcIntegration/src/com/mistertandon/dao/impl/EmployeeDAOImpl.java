@@ -35,11 +35,9 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 	public void createEmployeeEDAO(Employee employee) {
 
 		int addedEmpId = 0;
-
 		String sql = null;
 
 		sql = "INSERT INTO `employee` (`name`, `email`, `gender`, `salary`) VALUES (?,?,?,?)";
-
 		addedEmpId = jdbcTemplateObj.update(sql,
 				new Object[] { employee.getName(), employee.getEmail(), employee.getGender(), employee.getSalary() });
 
@@ -93,7 +91,6 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 	public Employee getEmployeeByIdEDAO(int id) {
 
 		String sql = "SELECT `id`, `name`, `email`, `gender`, `salary` FROM `employee` WHERE id=?";
-
 		Employee employeeObj = jdbcTemplateObj.queryForObject(sql, new EmployeeRowMapper(), id);
 
 		return employeeObj;
@@ -106,7 +103,6 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		int returnedId = 0;
 
 		sql = "DELETE FROM `employee` WHERE `employee`.`id` = ?";
-
 		returnedId = jdbcTemplateObj.update(sql, id);
 
 		if (returnedId > 0) {
@@ -119,9 +115,8 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
 		String sql = null;
 		int returnedId = 0;
-
+		
 		sql = "UPDATE `employee` SET `email` = ? WHERE `employee`.`id` = ?";
-
 		returnedId = jdbcTemplateObj.update(sql, emailId, employeeId);
 
 		if (returnedId > 0) {
