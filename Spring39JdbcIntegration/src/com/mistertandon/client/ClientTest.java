@@ -17,16 +17,21 @@ public class ClientTest {
 		EmployeeService employeeServiceObj = abstractApplicationContextObj.getBean("EmployeeServiceBC",
 				EmployeeService.class);
 
+		addEmployeeDetail(employeeServiceObj);
+
+		abstractApplicationContextObj.close();
+	}
+
+	private static void addEmployeeDetail(EmployeeService employeeServiceObj) {
+
 		Employee employeeObj = new Employee();
 
-		employeeObj.setName("Pra JI");
-		employeeObj.setEmail("praji@gmail.com");
+		employeeObj.setName("prabhashtandon");
+		employeeObj.setEmail("prabhashtandon@gmail.com");
 		employeeObj.setGender("Male");
 		employeeObj.setSalary(170000.00);
 
 		employeeServiceObj.createEmployeeE(employeeObj);
-		abstractApplicationContextObj.close();
-
 	}
 
 }
