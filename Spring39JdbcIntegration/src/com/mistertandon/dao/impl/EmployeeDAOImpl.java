@@ -107,8 +107,17 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
 	@Override
 	public void updateEmployeeEmailByIdEDAO(String emailId, int employeeId) {
-		// TODO Auto-generated method stub
 
+		String sql = null;
+		int returnedId = 0;
+
+		sql = "UPDATE `employee` SET `email` = ? WHERE `employee`.`id` = ?";
+
+		returnedId = jdbcTemplateObj.update(sql, emailId, employeeId);
+
+		if (returnedId > 0) {
+			System.out.println("Email id has been updated.");
+		}
 	}
 
 	@Override

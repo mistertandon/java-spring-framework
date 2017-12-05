@@ -21,9 +21,17 @@ public class ClientTest {
 
 		// addEmployeeDetail(employeeServiceObj);
 		// getEmployeeDetailById(employeeServiceObj, 1);
-		getAllEmployeeDetails(employeeServiceObj);
+		// getAllEmployeeDetails(employeeServiceObj);
+
+		updateEmployeeEmailById(employeeServiceObj, "prabhash@gmail.com", 3);
 
 		abstractApplicationContextObj.close();
+	}
+
+	private static void updateEmployeeEmailById(EmployeeService employeeServiceObj, String updatedEmailId,
+			int employeeId) {
+
+		employeeServiceObj.updateEmployeeEmailByIdE(updatedEmailId, employeeId);
 	}
 
 	private static void addEmployeeDetail(EmployeeService employeeServiceObj) {
