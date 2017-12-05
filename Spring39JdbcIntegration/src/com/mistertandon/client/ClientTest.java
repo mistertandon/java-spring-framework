@@ -22,10 +22,16 @@ public class ClientTest {
 		// addEmployeeDetail(employeeServiceObj);
 		// getEmployeeDetailById(employeeServiceObj, 1);
 		// getAllEmployeeDetails(employeeServiceObj);
+		// updateEmployeeEmailById(employeeServiceObj, "prabhash@gmail.com", 3);
 
-		updateEmployeeEmailById(employeeServiceObj, "prabhash@gmail.com", 3);
+		deleteEmployeeById(employeeServiceObj, 6);
 
 		abstractApplicationContextObj.close();
+	}
+
+	private static void deleteEmployeeById(EmployeeService employeeServiceObj, int id) {
+
+		employeeServiceObj.deleteEmployeeByIdE(id);
 	}
 
 	private static void updateEmployeeEmailById(EmployeeService employeeServiceObj, String updatedEmailId,

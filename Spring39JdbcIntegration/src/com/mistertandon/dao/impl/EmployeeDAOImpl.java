@@ -101,8 +101,17 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
 	@Override
 	public void deleteEmployeeByIdEDAO(int id) {
-		// TODO Auto-generated method stub
 
+		String sql = null;
+		int returnedId = 0;
+
+		sql = "DELETE FROM `employee` WHERE `employee`.`id` = ?";
+
+		returnedId = jdbcTemplateObj.update(sql, id);
+
+		if (returnedId > 0) {
+			System.out.println("Employee information has been deleted.");
+		}
 	}
 
 	@Override
