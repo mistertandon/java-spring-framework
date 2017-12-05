@@ -17,8 +17,8 @@ public class ClientTest {
 		EmployeeService employeeServiceObj = abstractApplicationContextObj.getBean("EmployeeServiceBC",
 				EmployeeService.class);
 
-		addEmployeeDetail(employeeServiceObj);
-
+		// addEmployeeDetail(employeeServiceObj);
+		getEmployeeDetailById(employeeServiceObj, 1);
 		abstractApplicationContextObj.close();
 	}
 
@@ -32,6 +32,19 @@ public class ClientTest {
 		employeeObj.setSalary(170000.00);
 
 		employeeServiceObj.createEmployeeE(employeeObj);
+	}
+
+	private static void getEmployeeDetailById(EmployeeService employeeServiceObj, int id) {
+
+		Employee employeeObj = employeeServiceObj.getEmployeeByIdE(id);
+
+		System.out.println("\nEmployee information:\n ");
+		System.out.println("Employee Id: " + employeeObj.getId());
+		System.out.println("Employee Name: " + employeeObj.getName());
+		System.out.println("Employee Email Id: " + employeeObj.getEmail());
+		System.out.println("Employee Gender: " + employeeObj.getGender());
+		System.out.println("Employee Salay: " + employeeObj.getSalary());
+
 	}
 
 }

@@ -8,7 +8,7 @@ public interface Employable {
 
 	public abstract void createEmployeeE(Employee employee);
 
-	public abstract Employee employeeByIdE(int id);
+	public abstract Employee getEmployeeByIdE(int id);
 
 	public abstract void deleteEmployeeByIdE(int id);
 

@@ -23,8 +23,8 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 	}
 
 	public void setDataSourceObj(DataSource dataSourceObj) {
-		this.dataSourceObj = dataSourceObj;
 
+		this.dataSourceObj = dataSourceObj;
 		jdbcTemplateObj = new JdbcTemplate(dataSourceObj);
 	}
 
@@ -90,9 +90,13 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 	 */
 
 	@Override
-	public Employee employeeByIdEDAO(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Employee getEmployeeByIdEDAO(int id) {
+
+		String sql = "SELECT `id`, `name`, `email`, `gender`, `salary` FROM `employee` WHERE id=?";
+
+		Employee employeeObj = jdbcTemplateObj.queryForObject(sql, new EmployeeRowMapper(), id);
+
+		return employeeObj;
 	}
 
 	@Override

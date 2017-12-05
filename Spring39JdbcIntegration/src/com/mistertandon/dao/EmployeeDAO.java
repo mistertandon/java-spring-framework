@@ -8,7 +8,7 @@ public interface EmployeeDAO {
 
 	public abstract void createEmployeeEDAO(Employee employee);
 
-	public abstract Employee employeeByIdEDAO(int id);
+	public abstract Employee getEmployeeByIdEDAO(int id);
 
 	public abstract void deleteEmployeeByIdEDAO(int id);
 

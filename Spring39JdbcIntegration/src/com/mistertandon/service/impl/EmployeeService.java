@@ -27,9 +27,9 @@ public class EmployeeService implements Employable {
 	}
 
 	@Override
-	public Employee employeeByIdE(int id) {
+	public Employee getEmployeeByIdE(int id) {
 
-		return employeeDAOObj.employeeByIdEDAO(id);
+		return employeeDAOObj.getEmployeeByIdEDAO(id);
 	}
 
 	@Override
