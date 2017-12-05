@@ -30,6 +30,10 @@
 	</bean>
 
 	<bean id="EmployeeDAOImplBC" class="com.mistertandon.dao.impl.EmployeeDAOImpl">
-		<property name="dataSourceObj" ref="dataSourceBC"></property>
+		<property name="jdbcTemplateObj" ref="jdbcTemplateBC"></property>
+	</bean>
+
+	<bean id="jdbcTemplateBC" class="org.springframework.jdbc.core.JdbcTemplate">
+		<constructor-arg name="dataSource" ref="dataSourceBC"></constructor-arg>
 	</bean>
 </beans>

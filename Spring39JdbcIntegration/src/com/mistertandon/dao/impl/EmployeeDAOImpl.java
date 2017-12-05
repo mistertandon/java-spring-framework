@@ -14,18 +14,10 @@ import com.mistertandon.model.Employee;
 
 public class EmployeeDAOImpl implements EmployeeDAO {
 
-	private DataSource dataSourceObj;
-
 	private JdbcTemplate jdbcTemplateObj;
 
-	public DataSource getDataSourceObj() {
-		return dataSourceObj;
-	}
-
-	public void setDataSourceObj(DataSource dataSourceObj) {
-
-		this.dataSourceObj = dataSourceObj;
-		jdbcTemplateObj = new JdbcTemplate(dataSourceObj);
+	public void setJdbcTemplateObj(JdbcTemplate jdbcTemplateObj) {
+		this.jdbcTemplateObj = jdbcTemplateObj;
 	}
 
 	/**
