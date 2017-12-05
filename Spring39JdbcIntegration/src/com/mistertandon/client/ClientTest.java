@@ -1,5 +1,7 @@
 package com.mistertandon.client;
 
+import java.util.List;
+
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -18,7 +20,9 @@ public class ClientTest {
 				EmployeeService.class);
 
 		// addEmployeeDetail(employeeServiceObj);
-		getEmployeeDetailById(employeeServiceObj, 1);
+		// getEmployeeDetailById(employeeServiceObj, 1);
+		getAllEmployeeDetails(employeeServiceObj);
+
 		abstractApplicationContextObj.close();
 	}
 
@@ -44,7 +48,22 @@ public class ClientTest {
 		System.out.println("Employee Email Id: " + employeeObj.getEmail());
 		System.out.println("Employee Gender: " + employeeObj.getGender());
 		System.out.println("Employee Salay: " + employeeObj.getSalary());
+	}
 
+	private static void getAllEmployeeDetails(EmployeeService employeeServiceObj) {
+
+		List<Employee> employeeList = employeeServiceObj.getAllEmployeesDetailsE();
+
+		System.out.println("\nEmployee information:\n ");
+
+		for (Employee employeeObj : employeeList) {
+
+			System.out.println("Employee Id: " + employeeObj.getId());
+			System.out.println("Employee Name: " + employeeObj.getName());
+			System.out.println("Employee Email Id: " + employeeObj.getEmail());
+			System.out.println("Employee Gender: " + employeeObj.getGender());
+			System.out.println("Employee Salay: " + employeeObj.getSalary() + "\n");
+		}
 	}
 
 }

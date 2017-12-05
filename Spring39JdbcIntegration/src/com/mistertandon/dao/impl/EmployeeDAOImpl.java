@@ -113,8 +113,11 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
 	@Override
 	public List<Employee> getAllEmployeesDetailsEDAO() {
-		// TODO Auto-generated method stub
-		return null;
+
+		String sql = "SELECT `id`, `name`, `email`, `gender`, `salary` FROM `employee` WHERE 1";
+
+		return jdbcTemplateObj.query(sql, new EmployeeRowMapper());
+
 	}
 
 }
