@@ -19,10 +19,10 @@ public class ClientTest {
 
 		Employee employeeObj = new Employee();
 
-		employeeObj.setName("Parvesh Tandon");
-		employeeObj.setEmail("parveshtandon@gmail.com");
+		employeeObj.setName("Pra JI");
+		employeeObj.setEmail("praji@gmail.com");
 		employeeObj.setGender("Male");
-		employeeObj.setSalary(150000.00);
+		employeeObj.setSalary(170000.00);
 
 		employeeServiceObj.createEmployeeE(employeeObj);
 		abstractApplicationContextObj.close();
