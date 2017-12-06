@@ -2,6 +2,7 @@ package com.mistertandon.client;
 
 import java.util.List;
 
+import org.springframework.beans.BeansException;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -14,16 +15,23 @@ public class ClientTest {
 
 		AbstractApplicationContext abstractApplicationContextObj = null;
 
-		abstractApplicationContextObj = new ClassPathXmlApplicationContext("Beans.xml");
+		try {
+			abstractApplicationContextObj = new ClassPathXmlApplicationContext("Beans.xml");
 
-		EmployeeService employeeServiceObj = abstractApplicationContextObj.getBean("employeeServiceObj",
-				EmployeeService.class);
+			EmployeeService employeeServiceObj = abstractApplicationContextObj.getBean("employeeServiceObj",
+					EmployeeService.class);
 
-		 createEmployee(employeeServiceObj);
-		// getEmployeeById(employeeServiceObj, 7);
-		// getEmployeesList(employeeServiceObj);
-		// updateEmployeeEmailIdById(employeeServiceObj, "erbipin@gmail.com", 7);
-		// deleteEmployeeById(employeeServiceObj, 7);
+			// createEmployee(employeeServiceObj);
+			// getEmployeeById(employeeServiceObj, 7);
+			getEmployeesList(employeeServiceObj);
+			// updateEmployeeEmailIdById(employeeServiceObj, "erbipin@gmail.com", 7);
+			// deleteEmployeeById(employeeServiceObj, 7);
+		} catch (BeansException e) {
+
+			e.printStackTrace();
+		} finally {
+			abstractApplicationContextObj.close();
+		}
 	}
 
 	private static void deleteEmployeeById(EmployeeService employeeServiceObj, int id) {
