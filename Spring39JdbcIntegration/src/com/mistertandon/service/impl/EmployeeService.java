@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.mistertandon.dao.EmployeeDAO;
 import com.mistertandon.model.Employee;
-import com.mistertanon.service.Employable;
+import com.mistertandon.service.Employable;
 
 public class EmployeeService implements Employable {
 
