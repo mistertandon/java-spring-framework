@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:component-scan base-package="com.mistertandon.model"></context:component-scan>
+
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>database.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="dataSourceBC"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${db.driverClassName}"></property>
+		<property name="url" value="${db.url}"></property>
+		<property name="username" value="${db.username}"></property>
+		<property name="password" value="${db.password}"></property>
+	</bean>
+
+	<bean id="EmployeeServiceBC" class="com.mistertandon.service.impl.EmployeeService">
+		<property name="employeeDAOObj" ref="EmployeeDAOImplBC"></property>
+	</bean>
+
+	<bean id="EmployeeDAOImplBC" class="com.mistertandon.dao.impl.EmployeeDAOImpl">
+		<property name="dataSource" ref="dataSourceBC"></property>
+	</bean>
+
+	<bean id="NamedParameterJdbcTemplateBC"
+		class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+		<constructor-arg name="dataSource" ref="dataSourceBC"></constructor-arg>
+	</bean>
+</beans>
