@@ -25,9 +25,4 @@
 		<property name="username" value="${db.username}"></property>
 		<property name="password" value="${db.password}"></property>
 	</bean>
-
-	<bean id="NamedParameterJdbcTemplateBC"
-		class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
-		<constructor-arg name="dataSource" ref="dataSourceBC"></constructor-arg>
-	</bean>
 </beans>
