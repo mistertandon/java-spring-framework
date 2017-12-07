@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<classpath>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/CommonsLogging"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SpringRefUpA"/>
-	<classpathentry kind="lib" path="C:/Users/pt250154/javaJars/mysql-connector-java-5.1.45/mysql-connector-java-5.1.45-bin.jar"/>
-	<classpathentry kind="output" path="bin"/>
-</classpath>
