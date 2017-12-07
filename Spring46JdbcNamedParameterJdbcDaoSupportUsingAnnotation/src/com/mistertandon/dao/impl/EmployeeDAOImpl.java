@@ -7,18 +7,29 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.annotation.Resource;
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
-import org.springframework.jdbc.core.namedparam.NamedParameterJdbcDaoSupport;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import com.mistertandon.dao.EmployeeDAO;
 import com.mistertandon.model.Employee;
 
+@Repository("employeeDAOObj")
+public class EmployeeDAOImpl implements EmployeeDAO {
 
-public class EmployeeDAOImpl extends NamedParameterJdbcDaoSupport implements EmployeeDAO {
+	@Autowired
+	@Resource(name = "NamedParameterJdbcTemplateBC")
+	private NamedParameterJdbcTemplate namedParameterJdbcTemplateObj;
+
+	public void setNamedParameterJdbcTemplateObj(NamedParameterJdbcTemplate namedParameterJdbcTemplateObj) {
+		this.namedParameterJdbcTemplateObj = namedParameterJdbcTemplateObj;
+	}
 
 	@Override
 	public void createEmployeeEDAO(Employee employee) {
@@ -35,7 +46,7 @@ public class EmployeeDAOImpl extends NamedParameterJdbcDaoSupport implements Emp
 		placeholderMap.put("gender", employee.getGender());
 		placeholderMap.put("salary", employee.getSalary());
 
-		addedEmpId = getNamedParameterJdbcTemplate().update(sql, placeholderMap);
+		addedEmpId = namedParameterJdbcTemplateObj.update(sql, placeholderMap);
 
 		if (addedEmpId > 0) {
 			System.out.println("Employee information has been save in database.");
@@ -62,7 +73,7 @@ public class EmployeeDAOImpl extends NamedParameterJdbcDaoSupport implements Emp
 		 * id);
 		 */
 
-		Employee employeeObj = getNamedParameterJdbcTemplate().queryForObject(sql, mapSqlParameterSourceObj,
+		Employee employeeObj = namedParameterJdbcTemplateObj.queryForObject(sql, mapSqlParameterSourceObj,
 				new EmployeeRowMapper());
 
 		return employeeObj;
@@ -79,7 +90,7 @@ public class EmployeeDAOImpl extends NamedParameterJdbcDaoSupport implements Emp
 		Map<String, Object> placeHolderObj = new HashMap<>();
 		placeHolderObj.put("employeeId", id);
 
-		returnedId = getNamedParameterJdbcTemplate().update(sql, placeHolderObj);
+		returnedId = namedParameterJdbcTemplateObj.update(sql, placeHolderObj);
 
 		if (returnedId > 0) {
 			System.out.println("Employee information has been deleted.");
@@ -99,7 +110,7 @@ public class EmployeeDAOImpl extends NamedParameterJdbcDaoSupport implements Emp
 		placeholderObj.put("employeeEmailId", emailId);
 		placeholderObj.put("employeeId", employeeId);
 
-		returnedId = getNamedParameterJdbcTemplate().update(sql, placeholderObj);
+		returnedId = namedParameterJdbcTemplateObj.update(sql, placeholderObj);
 
 		if (returnedId > 0) {
 			System.out.println("Email id has been updated.");
@@ -116,7 +127,7 @@ public class EmployeeDAOImpl extends NamedParameterJdbcDaoSupport implements Emp
 
 		sql = "SELECT `id`, `name`, `email`, `gender`, `salary` FROM `employee` WHERE 1";
 
-		return getNamedParameterJdbcTemplate().query(sql, new EmployeeRowMapper());
+		return namedParameterJdbcTemplateObj.query(sql, new EmployeeRowMapper());
 
 	}
 

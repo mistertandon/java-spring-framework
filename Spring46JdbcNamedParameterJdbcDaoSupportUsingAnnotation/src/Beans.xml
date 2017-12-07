@@ -6,7 +6,8 @@
            http://www.springframework.org/schema/context
            http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<context:component-scan base-package="com.mistertandon.model"></context:component-scan>
+	<context:component-scan base-package="com.mistertandon.service.impl"></context:component-scan>
+	<context:component-scan base-package="com.mistertandon.dao.impl"></context:component-scan>
 
 	<bean
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
@@ -23,14 +24,6 @@
 		<property name="url" value="${db.url}"></property>
 		<property name="username" value="${db.username}"></property>
 		<property name="password" value="${db.password}"></property>
-	</bean>
-
-	<bean id="EmployeeServiceBC" class="com.mistertandon.service.impl.EmployeeService">
-		<property name="employeeDAOObj" ref="EmployeeDAOImplBC"></property>
-	</bean>
-
-	<bean id="EmployeeDAOImplBC" class="com.mistertandon.dao.impl.EmployeeDAOImpl">
-		<property name="dataSource" ref="dataSourceBC"></property>
 	</bean>
 
 	<bean id="NamedParameterJdbcTemplateBC"
