@@ -30,7 +30,7 @@
 	</bean>
 
 	<bean id="EmployeeDAOImplBC" class="com.mistertandon.dao.impl.EmployeeDAOImpl">
-		<property name="namedParameterJdbcTemplateObj" ref="NamedParameterJdbcTemplateBC"></property>
+		<property name="dataSource" ref="dataSourceBC"></property>
 	</bean>
 
 	<bean id="NamedParameterJdbcTemplateBC"
