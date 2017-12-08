@@ -24,7 +24,7 @@ public class ClientTest {
 			// addEmployeeDetail(employeeServiceObj);
 			// updateEmployeeEmailById(employeeServiceObj, "mrusaintandon@gmail.com", 11);
 			// getEmployeeDetailById(employeeServiceObj, 11);
-			// getAllEmployeeDetails(employeeServiceObj);
+			 getAllEmployeeDetails(employeeServiceObj);
 			// deleteEmployeeById(employeeServiceObj, 11);
 
 		} catch (BeansException e) {

@@ -21,22 +21,14 @@ import com.mistertandon.model.Employee;
 
 @Repository
 public class EmployeeDAOImpl extends HibernateDaoSupport implements EmployeeDAO {
-	
+
 	@Autowired
-	@Resource(name="hibernateTemplateBC")
+	@Resource(name = "hibernateTemplateBC")
 	private HibernateTemplate hibernateTemplateObj;
 
 	@PostConstruct
 	public void init() {
 		setHibernateTemplate(hibernateTemplateObj);
-	}
-
-	public HibernateTemplate getHibernateTemplateObj() {
-		return hibernateTemplateObj;
-	}
-
-	public void setHibernateTemplateObj(HibernateTemplate hibernateTemplateObj) {
-		this.hibernateTemplateObj = hibernateTemplateObj;
 	}
 
 	@Override
