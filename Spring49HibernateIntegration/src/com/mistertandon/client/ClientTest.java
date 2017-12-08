@@ -22,10 +22,10 @@ public class ClientTest {
 					EmployeeService.class);
 
 			// addEmployeeDetail(employeeServiceObj);
-//			 getEmployeeDetailById(employeeServiceObj, 1);
-			 getAllEmployeeDetails(employeeServiceObj);
-			// updateEmployeeEmailById(employeeServiceObj, "prabhash@gmail.com", 3);
-			// deleteEmployeeById(employeeServiceObj, 6);
+			// getEmployeeDetailById(employeeServiceObj, 1);
+			// getAllEmployeeDetails(employeeServiceObj);
+			// updateEmployeeEmailById(employeeServiceObj, "erbipin@gmail.com", 8);
+			 deleteEmployeeById(employeeServiceObj, 8);
 
 		} catch (BeansException e) {
 

@@ -40,14 +40,18 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
 	@Override
 	public void deleteEmployeeByIdEDAO(int id) {
-		// TODO Auto-generated method stub
 
+		Employee employeeObj = new Employee();
+		employeeObj.setId(id);
+		hibernateTemplateObj.delete(employeeObj);
 	}
 
 	@Override
 	public void updateEmployeeEmailByIdEDAO(String emailId, int employeeId) {
-		// TODO Auto-generated method stub
 
+		Employee employeeObj = hibernateTemplateObj.get(Employee.class, employeeId);
+		employeeObj.setEmail(emailId);
+		hibernateTemplateObj.update(employeeObj);
 	}
 
 	@Override
