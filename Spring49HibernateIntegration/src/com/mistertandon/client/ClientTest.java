@@ -10,7 +10,7 @@ import com.mistertandon.model.Employee;
 import com.mistertandon.service.impl.EmployeeService;
 
 public class ClientTest {
-	
+
 	public static void main(String[] args) {
 
 		AbstractApplicationContext abstractApplicationContextObj = null;
@@ -22,8 +22,8 @@ public class ClientTest {
 					EmployeeService.class);
 
 			// addEmployeeDetail(employeeServiceObj);
-			getEmployeeDetailById(employeeServiceObj, 1);
-			// getAllEmployeeDetails(employeeServiceObj);
+//			 getEmployeeDetailById(employeeServiceObj, 1);
+			 getAllEmployeeDetails(employeeServiceObj);
 			// updateEmployeeEmailById(employeeServiceObj, "prabhash@gmail.com", 3);
 			// deleteEmployeeById(employeeServiceObj, 6);
 
@@ -50,10 +50,10 @@ public class ClientTest {
 
 		Employee employeeObj = new Employee();
 
-		employeeObj.setName("prabhashtandon");
-		employeeObj.setEmail("prabhashtandon@gmail.com");
+		employeeObj.setName("rudra tandon");
+		employeeObj.setEmail("rudratandon@gmail.com");
 		employeeObj.setGender("Male");
-		employeeObj.setSalary(170000.00);
+		employeeObj.setSalary(70000.00);
 
 		employeeServiceObj.createEmployeeE(employeeObj);
 	}

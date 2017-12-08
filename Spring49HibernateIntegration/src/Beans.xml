@@ -6,8 +6,6 @@
            http://www.springframework.org/schema/context
            http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<context:component-scan base-package="com.mistertandon.model"></context:component-scan>
-
 	<bean
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations">
@@ -30,10 +28,29 @@
 	</bean>
 
 	<bean id="EmployeeDAOImplBC" class="com.mistertandon.dao.impl.EmployeeDAOImpl">
-		<property name="jdbcTemplateObj" ref="jdbcTemplateBC"></property>
+		<property name="hibernateTemplateObj" ref="hibernateTemplateBC"></property>
 	</bean>
 
-	<bean id="jdbcTemplateBC" class="org.springframework.jdbc.core.JdbcTemplate">
-		<constructor-arg name="dataSource" ref="dataSourceBC"></constructor-arg>
+	<bean id="hibernateTemplateBC" class="org.springframework.orm.hibernate3.HibernateTemplate">
+		<constructor-arg name="sessionFactory" ref="sessionFactoryBC"></constructor-arg>
 	</bean>
+
+	<bean id="sessionFactoryBC"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSourceBC"></property>
+		<property name="annotatedClasses">
+			<array>
+				<value>com.mistertandon.model.Employee</value>
+			</array>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.format_sql">false</prop>
+			</props>
+		</property>
+	</bean>
+
 </beans>
