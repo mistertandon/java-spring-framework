@@ -6,6 +6,9 @@
            http://www.springframework.org/schema/context
            http://www.springframework.org/schema/context/spring-context.xsd">
 
+	<context:component-scan base-package="com.mistertandon.service.impl"></context:component-scan>
+	<context:component-scan base-package="com.mistertandon.dao.impl"></context:component-scan>
+
 	<bean
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations">
@@ -23,13 +26,11 @@
 		<property name="password" value="${db.password}"></property>
 	</bean>
 
-	<bean id="EmployeeServiceBC" class="com.mistertandon.service.impl.EmployeeService">
-		<property name="employeeDAOObj" ref="EmployeeDAOImplBC"></property>
-	</bean>
-
-	<bean id="EmployeeDAOImplBC" class="com.mistertandon.dao.impl.EmployeeDAOImpl">
-		<property name="hibernateTemplateObj" ref="hibernateTemplateBC"></property>
-	</bean>
+	<!-- <bean id="EmployeeServiceBC" class="com.mistertandon.service.impl.EmployeeService"> 
+		<property name="employeeDAOObj" ref="EmployeeDAOImplBC"></property> </bean> 
+		<bean id="EmployeeDAOImplBC" class="com.mistertandon.dao.impl.EmployeeDAOImpl"> 
+		<property name="hibernateTemplateObj" ref="hibernateTemplateBC"></property> 
+		</bean> -->
 
 	<bean id="hibernateTemplateBC" class="org.springframework.orm.hibernate3.HibernateTemplate">
 		<constructor-arg name="sessionFactory" ref="sessionFactoryBC"></constructor-arg>

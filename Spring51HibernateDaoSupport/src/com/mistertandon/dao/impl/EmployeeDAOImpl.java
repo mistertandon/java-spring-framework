@@ -5,18 +5,31 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
 import javax.sql.DataSource;
 
 import org.hibernate.criterion.DetachedCriteria;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.orm.hibernate3.HibernateTemplate;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+import org.springframework.stereotype.Repository;
 
 import com.mistertandon.dao.EmployeeDAO;
 import com.mistertandon.model.Employee;
 
-public class EmployeeDAOImpl implements EmployeeDAO {
-
+@Repository
+public class EmployeeDAOImpl extends HibernateDaoSupport implements EmployeeDAO {
+	
+	@Autowired
+	@Resource(name="hibernateTemplateBC")
 	private HibernateTemplate hibernateTemplateObj;
+
+	@PostConstruct
+	public void init() {
+		setHibernateTemplate(hibernateTemplateObj);
+	}
 
 	public HibernateTemplate getHibernateTemplateObj() {
 		return hibernateTemplateObj;
