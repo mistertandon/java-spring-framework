@@ -5,17 +5,23 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
 
+import javax.annotation.Resource;
 import javax.sql.DataSource;
 
 import org.hibernate.criterion.DetachedCriteria;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.orm.hibernate3.HibernateTemplate;
+import org.springframework.stereotype.Repository;
 
 import com.mistertandon.dao.EmployeeDAO;
 import com.mistertandon.model.Employee;
 
+@Repository
 public class EmployeeDAOImpl implements EmployeeDAO {
-
+	
+	@Autowired
+	@Resource(name="hibernateTemplateBC")
 	private HibernateTemplate hibernateTemplateObj;
 
 	public HibernateTemplate getHibernateTemplateObj() {

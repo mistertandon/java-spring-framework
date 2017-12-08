@@ -2,12 +2,17 @@ package com.mistertandon.service.impl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.mistertandon.dao.EmployeeDAO;
 import com.mistertandon.model.Employee;
 import com.mistertandon.service.Employable;
 
+@Service("employeeServiceObj")
 public class EmployeeService implements Employable {
-
+	
+	@Autowired
 	private EmployeeDAO employeeDAOObj;
 
 	public EmployeeDAO getEmployeeDAOObj() {

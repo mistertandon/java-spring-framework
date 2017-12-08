@@ -18,14 +18,14 @@ public class ClientTest {
 		try {
 
 			abstractApplicationContextObj = new ClassPathXmlApplicationContext("Beans.xml");
-			EmployeeService employeeServiceObj = abstractApplicationContextObj.getBean("EmployeeServiceBC",
+			EmployeeService employeeServiceObj = abstractApplicationContextObj.getBean("employeeServiceObj",
 					EmployeeService.class);
 
 			// addEmployeeDetail(employeeServiceObj);
-			// getEmployeeDetailById(employeeServiceObj, 1);
+			getEmployeeDetailById(employeeServiceObj, 1);
 			// getAllEmployeeDetails(employeeServiceObj);
 			// updateEmployeeEmailById(employeeServiceObj, "erbipin@gmail.com", 8);
-			 deleteEmployeeById(employeeServiceObj, 8);
+			// deleteEmployeeById(employeeServiceObj, 8);
 
 		} catch (BeansException e) {
 
